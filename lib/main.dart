@@ -7,7 +7,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,17 +22,20 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
+
   final String title;
+
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
+  var _counter = 0;
+  var _acc = 10;
   void _incrementCounter() {
     setState(() {
       _counter++;
+      _acc++;
     });
   }
 
@@ -42,25 +44,53 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        title: Text(
+          widget.title,
+          style: const TextStyle(
+              fontSize: 13,
+              fontWeight: FontWeight.w400,
+              color: Colors.blueAccent),
+          maxLines: 1,
+        ),
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             const Text(
               'You have pushed the button this many time1:',
             ),
             Text(
-              '$_counter',
+              '$_counter ',
               style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            Row(
+              children: <Widget>[
+                Text(
+                  '$_acc',
+                  style: Theme.of(context).textTheme.headlineMedium,
+
+                ),
+                const Text("data"),
+                const Text("data"),
+                const Text("data"),
+                const Text("data"),
+                const Text("data"),
+                const Column(
+                  children: [
+                    Text("child"),
+                    Text("child"),
+                    Text("child"),
+                    Text("child"),
+                  ],
+                )
+              ],
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
-        tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
