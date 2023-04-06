@@ -36,6 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _counter++;
       _acc++;
+      debugPrint("$_acc");
     });
   }
 
@@ -55,6 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Column(
+
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             const Text(
