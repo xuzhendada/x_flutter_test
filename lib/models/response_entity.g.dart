@@ -11,7 +11,7 @@ ResponseEntity<T> _$ResponseEntityFromJson<T>(
   T Function(Object? json) fromJsonT,
 ) =>
     ResponseEntity<T>(
-      _$nullableGenericFromJson(json['data'], fromJsonT),
+      fromJsonT(json['data']),
       json['errCode'] as int?,
       json['errorMsg'] as String?,
     );
@@ -21,19 +21,7 @@ Map<String, dynamic> _$ResponseEntityToJson<T>(
   Object? Function(T value) toJsonT,
 ) =>
     <String, dynamic>{
-      'data': _$nullableGenericToJson(instance.data, toJsonT),
+      'data': toJsonT(instance.data),
       'errCode': instance.errorCode,
       'errorMsg': instance.errorMsg,
     };
-
-T? _$nullableGenericFromJson<T>(
-  Object? input,
-  T Function(Object? json) fromJson,
-) =>
-    input == null ? null : fromJson(input);
-
-Object? _$nullableGenericToJson<T>(
-  T? input,
-  Object? Function(T value) toJson,
-) =>
-    input == null ? null : toJson(input);

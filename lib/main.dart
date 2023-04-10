@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:x_flutter_test/models/banner_entity.dart';
+import 'package:x_flutter_test/net/apiConfig.dart';
+import 'package:x_flutter_test/net/requestClient.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,12 +35,18 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   var _counter = 0;
   var _acc = 10;
+  final RequestClient _requestClient = RequestClient();
   void _incrementCounter() {
     setState(() {
       _counter++;
       _acc++;
       debugPrint("$_acc");
     });
+    getBanner();
+  }
+  Future<void> getBanner() async {
+    BannerEntity? bannerEntity = await _requestClient.get<BannerEntity>(ApiConfig().bannerUrl);
+    debugPrint(bannerEntity.toString());
   }
 
   @override
@@ -56,7 +65,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Column(
-
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             const Text(
@@ -84,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Text("child"),
                     Text("child"),
                     Text("child"),
-                  ],
+                  ]
                 )
               ],
             ),
