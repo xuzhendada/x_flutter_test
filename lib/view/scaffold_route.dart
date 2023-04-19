@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:x_flutter_test/view/new_route.dart';
-import 'package:x_flutter_test/view/tip_route.dart';
-
-import 'layout_route.dart';
 
 class ScaffoldRoute extends StatefulWidget {
   const ScaffoldRoute({super.key});

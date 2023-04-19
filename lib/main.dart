@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:x_flutter_test/models/banner_entity.dart';
-import 'package:x_flutter_test/net/apiConfig.dart';
-import 'package:x_flutter_test/net/requestClient.dart';
 import 'package:x_flutter_test/view/layout_route.dart';
 import 'package:x_flutter_test/view/new_route.dart';
 import 'package:x_flutter_test/view/scaffold_route.dart';
