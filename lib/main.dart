@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:x_flutter_test/view/layout_route.dart';
+import 'package:x_flutter_test/view/listview_route.dart';
 import 'package:x_flutter_test/view/new_route.dart';
 import 'package:x_flutter_test/view/scaffold_route.dart';
 import 'package:x_flutter_test/view/tip_route.dart';
@@ -55,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void navigateTipRoute() async {
     var result =
-    await Navigator.push(context, MaterialPageRoute(builder: (context) {
+        await Navigator.push(context, MaterialPageRoute(builder: (context) {
       return const TipRoute(
         text: "我是提示",
         key: Key("value"),
@@ -68,10 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme
-            .of(context)
-            .colorScheme
-            .inversePrimary,
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(
           widget.title,
           style: const TextStyle(color: Colors.white),
@@ -84,8 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Center(
               child: ElevatedButton(
-                  onPressed: navigateTipRoute,
-                  child: const Text("打开提示页面")),
+                  onPressed: navigateTipRoute, child: const Text("打开提示页面")),
             ),
             Text(
               'You have pushed the button this many time:' * 2,
@@ -94,17 +91,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: Colors.blueAccent,
                   fontSize: 18,
                   height: 1.5,
-                  background: Paint()
-                    ..color = Colors.black12,
+                  background: Paint()..color = Colors.black12,
                   decoration: TextDecoration.underline,
                   decorationStyle: TextDecorationStyle.dashed),
             ),
             Text(
               '$_counter ',
-              style: Theme
-                  .of(context)
-                  .textTheme
-                  .headlineMedium,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
             IconButton(
                 onPressed: () {}, icon: const Icon(Icons.construction_rounded)),
@@ -125,7 +118,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 icon: const Icon(Icons.save_alt_outlined),
                 label: const Text("下载")),
             TextButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const ListViewRoute();
+                  }));
+                },
                 icon: const Icon(Icons.save_alt_outlined),
                 label: const Text("下载")),
             FilledButton.icon(
@@ -143,10 +140,7 @@ class _MyHomePageState extends State<MyHomePage> {
               children: <Widget>[
                 Text(
                   '$_acc',
-                  style: Theme
-                      .of(context)
-                      .textTheme
-                      .headlineMedium,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 TextButton(
                     onPressed: navigateToNewRoute,

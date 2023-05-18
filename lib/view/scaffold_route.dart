@@ -34,9 +34,9 @@ class _ScaffoldRouteState extends State<ScaffoldRoute>
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.business), label: "business"),
-            BottomNavigationBarItem(icon: Icon(Icons.school), label: "school"),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: "person"),
+                icon: Icon(Icons.assistant_direction), label: "s"),
+            BottomNavigationBarItem(icon: Icon(Icons.location_on_outlined), label: "人员定位"),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: "我的"),
           ],
           currentIndex: _tabController.index,
           fixedColor: Colors.blue,

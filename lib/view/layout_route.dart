@@ -28,70 +28,76 @@ class _LayoutRoute extends State<LayoutRoute> {
                 child: redBox,
               ),
             ),
-            Flex(
-              direction: Axis.vertical,
-              children: [
-                Expanded(
-                    flex: 1,
-                    child: Container(
-                      height: 30,
-                      color: Colors.red,
-                    )),
-                Expanded(
-                    flex: 2,
-                    child: Container(
-                      height: 30,
-                      color: Colors.green,
-                    ))
-              ],
-            ),
             const Wrap(
               spacing: 8,
               runSpacing: 8,
               alignment: WrapAlignment.center,
               children: [
                 Chip(
-                    label: Text("鸣人"),
+                    label: Text("路飞，蛇人形态"),
                     avatar: CircleAvatar(
                         backgroundColor: Colors.blue,
                         child:
                             Text("M", style: TextStyle(color: Colors.white)))),
                 Chip(
-                    label: Text("佐助"),
+                    label: Text("索隆，三刀流"),
                     avatar: CircleAvatar(
                         backgroundColor: Colors.blue,
                         child:
                             Text("Z", style: TextStyle(color: Colors.white)))),
                 Chip(
-                    label: Text("小樱"),
+                    label: Text("山治，火腿"),
                     avatar: CircleAvatar(
                         backgroundColor: Colors.blue,
                         child:
                             Text("X", style: TextStyle(color: Colors.white)))),
                 Chip(
-                    label: Text("好色仙人"),
+                    label: Text("娜美"),
                     avatar: CircleAvatar(
                         backgroundColor: Colors.blue,
                         child:
                             Text("H", style: TextStyle(color: Colors.white)))),
                 Chip(
-                    label: Text("卡卡西"),
+                    label: Text("乔巴"),
                     avatar: CircleAvatar(
                         backgroundColor: Colors.blue,
                         child:
                             Text("K", style: TextStyle(color: Colors.white)))),
                 Chip(
-                    label: Text("纲手"),
+                    label: Text("罗宾"),
                     avatar: CircleAvatar(
                         backgroundColor: Colors.blue,
                         child:
                             Text("G", style: TextStyle(color: Colors.white)))),
                 Chip(
-                    label: Text("宇智波鼬"),
+                    label: Text("佛兰奇"),
                     avatar: CircleAvatar(
                         backgroundColor: Colors.blue,
                         child:
                             Text("Y", style: TextStyle(color: Colors.white)))),
+                Chip(
+                    label: Text("布鲁克"),
+                    avatar: CircleAvatar(
+                        backgroundColor: Colors.blue,
+                        child:
+                            Text("Y", style: TextStyle(color: Colors.white)))),
+              ],
+            ),
+            const Wrap(
+              spacing: 20,
+              runSpacing: 4,
+              alignment: WrapAlignment.start,
+              children: [
+                Text("xuzhen"),
+                Text("xuzhen123"),
+                Text("xuzhen456"),
+                Text("xuzhen789"),
+                Text("xuzhen101112"),
+                Text("xuzhen131415"),
+                Text("xuzhen161718"),
+                Text("xuzhen161718xuzhen161718xu"),
+                Text("xuzhen"),
+                Text("xuzhen161718123"),
               ],
             )
           ],
